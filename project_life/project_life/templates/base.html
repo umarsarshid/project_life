@@ -1,21 +1,27 @@
 {% load static %}
 
-<link rel="stylesheet" type="text/css" href=" {% static '/css/style.css' %} ">
-
-<div class="maincontainer">
-    <div class="header">
-      <div class="logo">
-        <p><a href="index.html">umararshid.com</a></p>
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href=" {% static '/css/style.css' %} ">
+</head>
+<body>
+  <div class="maincontainer">
+      <div class="header">
+        <div class="logo">
+          <p><a href="index.html">umararshid.com</a></p>
+        </div>
+        <ul>
+          <li><a href="#">about</a></li>
+          <li><a href="#">projects</a></li>
+          <li><a href="#">rambles</a></li>
+        </ul>
       </div>
-      <ul>
-        <li><a href="#">about</a></li>
-        <li><a href="#">projects</a></li>
-        <li><a href="#">rambles</a></li>
-      </ul>
-    </div>
-    <div class="container">
-        {% block page_content %}{% endblock %}
-    </div>
-    <div class="footer">
-    </div>
-</div>
+      <div class="container">
+          {% block page_content %}{% endblock %}
+      </div>
+      <div class="footer">
+      </div>
+  </div>
+</body>

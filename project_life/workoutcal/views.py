@@ -11,12 +11,12 @@ from .utils import Calendar
 
 class CalendarView(generic.ListView):
     model = WorkoutExercise
-    template_name = 'templates/calendar.html'
+    template_name = 'calendar.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         # use today's date for the calendar
-        d = get_date(self.request.Get.get('day',None))
+        d = get_date(self.request.GET.get('day',None))
         # Instantiate our calendar class with today's year and date
         cal = Calendar(d.year, d.month)
         # Call the formatmonth method, which returns our calendar as a table
@@ -25,8 +25,8 @@ class CalendarView(generic.ListView):
         return context
 
 
-    def get_date(req_day):
-        if req_day:
-            year, month = (int(x) for x in req_day.split('-'))
-            return date(year, month, day=1)
-        return datetime.today()
+def get_date(req_day):
+    if req_day:
+        year, month = (int(x) for x in req_day.split('-'))
+        return date(year, month, day=1)
+    return datetime.today()
