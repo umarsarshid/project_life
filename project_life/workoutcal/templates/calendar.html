@@ -2,5 +2,9 @@
 {% load static %}
 <link rel="stylesheet" type="text/css" href=" {% static '/css/workoutcal.css' %} ">
 {% block page_content %}
+  <div class="nextmonthprevmonthbutt">
+    <a class="btn btn-info left" href="{% url 'calendar_spec' prevmonth %}"> Previous Month </a>
+    <a class="btn btn-info right" href="{% url 'calendar_spec' nextmonth %}"> Next Month </a>
+  </div>
 {{ calendar }}
 {% endblock %}
