@@ -2,13 +2,13 @@ from datetime import datetime, timedelta
 from calendar import HTMLCalendar
 from .models import Category, WorkoutExercise
 
+
+# HTMLCalender subobject that helps create the individual parts of the Calender. This will be called by the view function at time of page load so it can create the Calendar
 class Calendar(HTMLCalendar):
     def __init__(self, year = None, month = None):
         self.year = year
         self.month = month
         super(Calendar, self).__init__()
-    def formatmonthname(self.year, self)
-
 
     # formats a day as a td
 	# filter events by day
